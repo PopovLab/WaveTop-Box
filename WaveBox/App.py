@@ -1,6 +1,7 @@
 import importlib
 import os
 import tkinter as tk
+from tkinter import filedialog
 import tkinter.ttk as ttk
 import tkinter.messagebox as messagebox
 from functools import partial
@@ -130,7 +131,7 @@ class App(tk.Tk):
 
 
     def open_work_space_dialog(self):
-        dir = tk.filedialog.askdirectory()
+        dir = filedialog.askdirectory()
         if len(dir)>0:
             self.open_work_space(dir)
         #self.v.set('xxx')
