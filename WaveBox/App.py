@@ -164,8 +164,8 @@ class App(tk.Tk):
         self.content_frame.set_content(view)
 
     def show_about(self):
-        my_version = get_version('AstraBox')
-        messagebox.showinfo("Astra Box", f"version {my_version}")
+        my_version = get_version('WaveTopBox')
+        messagebox.showinfo("WaveTop Box", f"version {my_version}")
 
     def show_FolderItem(self, folder_item):
         

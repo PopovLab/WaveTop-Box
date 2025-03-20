@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "wavetopbox"
+name = "WaveTopBox"
 version = "0.1.0"
 description = "WaveTop Box"
 authors = ["Alex <temper8@gmail.com>"]
