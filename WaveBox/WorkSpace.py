@@ -147,7 +147,7 @@ class Folder(BaseModel):
 
 
 default_catalog = [
-    Folder(title= 'Experiments', content_type='ExpModel', location= 'exp'),
+    Folder(title= 'Impedances', content_type='ImpModel', location= 'imp'),
     Folder(title= 'Equlibrium', content_type='EquModel', location= 'equ'),
     Folder(title= 'Subroutine', content_type='SbrModel', location= 'sbr'),
     Folder(title= 'Ray Tracing Configurations', content_type='RTModel', location= 'ray_tracing', required= False),
