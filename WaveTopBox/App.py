@@ -11,7 +11,7 @@ from functools import partial
 import WaveTopBox.pages.RackFrame as RackFrame
 from WaveTopBox.pages.ContentFrame import ContentFrame
 
-from WaveTopBox.pages.EmptyPage import EmptyPage
+from WaveTopBox.pages.empty_page import EmptyPage
 #from AstraBox.Pages.RayTracingPage import RayTracingPage
 #from AstraBox.Views.TextView import TextView
 #from AstraBox.Pages.ExpPage import ExpPage
