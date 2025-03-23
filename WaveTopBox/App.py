@@ -31,8 +31,8 @@ work_space_loc = None
 
 def run():
     print(work_space_loc)
-    app = App()
-    app.mainloop()
+    win = MainWindow()
+    win.mainloop()
 
 def clone_model(model):
     model = ModelFactory.clone_model(model)
@@ -73,7 +73,7 @@ def get_version(pk_name):
         version = importlib.metadata.version(pk_name)
     return version
 
-class App(tk.Tk):
+class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("WaveTop Box")
