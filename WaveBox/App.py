@@ -8,10 +8,10 @@ from functools import partial
 #from AstraBox.Pages.FRTCPage import FRTCPage
 #from AstraBox.Pages.SpectrumPage import SpectrumPage
 #from AstraBox.Views.FRTCView import FRTCView
-import WaveBox.Pages.RackFrame as RackFrame
-from WaveBox.Pages.ContentFrame import ContentFrame
+import WaveBox.pages.RackFrame as RackFrame
+from WaveBox.pages.ContentFrame import ContentFrame
 
-from WaveBox.Pages.EmptyPage import EmptyPage
+from WaveBox.pages.EmptyPage import EmptyPage
 #from AstraBox.Pages.RayTracingPage import RayTracingPage
 #from AstraBox.Views.TextView import TextView
 #from AstraBox.Pages.ExpPage import ExpPage
@@ -23,7 +23,7 @@ from WaveBox.Pages.EmptyPage import EmptyPage
 #import AstraBox.Models.ModelFactory as ModelFactory
 #import AstraBox.Config as Config
 import WaveBox.work_space as work_space
-import WaveBox.History as History
+import WaveBox.history as history
 
 live = True
 
