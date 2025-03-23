@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from WaveTopBox.UI.HeaderPanel import HeaderPanel
+from WaveTopBox.ui.HeaderPanel import HeaderPanel
 
 class EmptyPage(ttk.Frame):
     def __init__(self, master, model=None) -> None:
