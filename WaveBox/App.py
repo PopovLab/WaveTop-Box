@@ -22,7 +22,7 @@ from WaveBox.Pages.EmptyPage import EmptyPage
 
 #import AstraBox.Models.ModelFactory as ModelFactory
 #import AstraBox.Config as Config
-import WaveBox.WorkSpace as WorkSpace
+import WaveBox.work_space as work_space
 import WaveBox.History as History
 
 live = True
@@ -36,9 +36,9 @@ def run():
 
 def clone_model(model):
     model = ModelFactory.clone_model(model)
-    WorkSpace.save_model(model)
+    work_space.save_model(model)
     print(type(model).__name__)
-    WorkSpace.refresh_folder(type(model).__name__) 
+    work_space.refresh_folder(type(model).__name__) 
 
 geo_file = "data/geo.ini"
 
@@ -108,10 +108,10 @@ class App(tk.Tk):
         if work_space_loc:
             self.base_folder = work_space_loc
             self.title(f"ASTRA Box in {work_space_loc}")            
-            self.work_space= WorkSpace.open(work_space_loc)
+            self.work_space= work_space.open(work_space_loc)
             History.add_new(work_space_loc)
         else:
-            self.work_space= WorkSpace.WorkSpace()
+            self.work_space= work_space.WorkSpace()
             
         # first paned window
         main_panel = tk.PanedWindow(self, background='#C0DCF3')  
@@ -150,7 +150,7 @@ class App(tk.Tk):
             self.destroy()
             
     def open_doc(self):
-        wp = WorkSpace.get_location_path()
+        wp = work_space.get_location_path()
         doc_path = wp.joinpath('doc/html/publish/index.html')
         if doc_path.exists():
             os.system(f'start {doc_path.as_posix()}/')            
@@ -200,8 +200,8 @@ class App(tk.Tk):
 
     def create_FRTC_configuration(self):
         model = ModelFactory.create_model('FRTCModel')
-        WorkSpace.save_model(model)
-        WorkSpace.refresh_folder('FRTCModel') 
+        work_space.save_model(model)
+        work_space.refresh_folder('FRTCModel') 
         #page = FRTCPage(self.content_frame, None, model) 
         #self.content_frame.set_content(page)
 
@@ -210,27 +210,27 @@ class App(tk.Tk):
     def create_gauss_spectrum(self):
         print('create_gauss_spectrum')
         model = ModelFactory.create_spectrum_model('gauss')
-        WorkSpace.save_model(model)
-        WorkSpace.refresh_folder('SpectrumModel') 
+        work_space.save_model(model)
+        work_space.refresh_folder('SpectrumModel') 
 
     def create_spectrum_1D(self):
         print('create gcreate_spectrum_1D')
         model = ModelFactory.create_spectrum_model('spectrum_1D')
-        WorkSpace.save_model(model)
-        WorkSpace.refresh_folder('SpectrumModel') 
+        work_space.save_model(model)
+        work_space.refresh_folder('SpectrumModel') 
 
     def create_spectrum_2D(self):
         print('create gcreate_spectrum_2D')
         model = ModelFactory.create_spectrum_model('spectrum_2D')
-        WorkSpace.save_model(model)
-        WorkSpace.refresh_folder('SpectrumModel') 
+        work_space.save_model(model)
+        work_space.refresh_folder('SpectrumModel') 
 
 
     def create_scatter_spectrum(self):
         print('create scatter_spectrum')
         model = ModelFactory.create_spectrum_model('scatter_spectrum')
-        WorkSpace.save_model(model)
-        WorkSpace.refresh_folder('SpectrumModel') 
+        work_space.save_model(model)
+        work_space.refresh_folder('SpectrumModel') 
 
 
     def open_command(self, arg):

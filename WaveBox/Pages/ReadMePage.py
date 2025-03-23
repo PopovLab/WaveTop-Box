@@ -143,7 +143,7 @@ def test_md_print():
     md = rich.markdown.Markdown(MARKDOWN)
     console.print(md)
 
-import WaveBox.WorkSpace as WorkSpace
+import WaveBox.work_space as work_space
 
 class ReadMePage(ttk.Frame):
     def __init__(self, master) -> None:
@@ -158,5 +158,5 @@ class ReadMePage(ttk.Frame):
         text = SimpleMarkdownText(self, width=45, height=22,  wrap="none")
         text.pack(fill="both", expand=True)
 
-        text.insert_markdown(WorkSpace.get_ReadMe())
+        text.insert_markdown(work_space.get_ReadMe())
         text.config(state='disabled')

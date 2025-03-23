@@ -148,8 +148,8 @@ class Folder(BaseModel):
 
 default_catalog = [
     Folder(title= 'Impedances', content_type='ImpModel', location= 'imp'),
-    Folder(title= 'Equlibrium', content_type='EquModel', location= 'equ'),
-    Folder(title= 'Subroutine', content_type='SbrModel', location= 'sbr'),
+    Folder(title= 'Imped races', content_type='ImpRaceModel', location= 'imp_race'),
+    Folder(title= 'GRILL', content_type='GrillModel', location= 'grill'),
     Folder(title= 'Ray Tracing Configurations', content_type='RTModel', location= 'ray_tracing', required= False),
     Folder(title= 'FRTC Configurations', content_type='FRTCModel', location= 'frtc', required= False),
     Folder(title= 'Spectrums', content_type='SpectrumModel', location= 'spectrum', required= False),
