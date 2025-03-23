@@ -9,7 +9,7 @@ from functools import partial
 #from AstraBox.Pages.SpectrumPage import SpectrumPage
 #from AstraBox.Views.FRTCView import FRTCView
 import WaveTopBox.pages.RackFrame as RackFrame
-from WaveTopBox.pages.ContentFrame import ContentFrame
+from WaveTopBox.pages.content_frame import ContentFrame
 
 from WaveTopBox.pages.empty_page import EmptyPage
 #from AstraBox.Pages.RayTracingPage import RayTracingPage
