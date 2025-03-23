@@ -1,8 +1,8 @@
 import os
 import tkinter as tk
 import tkinter.ttk as ttk
-from WaveBox.ui.ListView  import ListView
-from WaveBox.ui.TableView import TableView 
+from WaveTopBox.ui.ListView  import ListView
+from WaveTopBox.ui.TableView import TableView 
 
 
 def construct(master, app):

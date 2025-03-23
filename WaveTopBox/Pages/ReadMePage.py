@@ -143,7 +143,7 @@ def test_md_print():
     md = rich.markdown.Markdown(MARKDOWN)
     console.print(md)
 
-import WaveBox.work_space as work_space
+import WaveTopBox.work_space as work_space
 
 class ReadMePage(ttk.Frame):
     def __init__(self, master) -> None:

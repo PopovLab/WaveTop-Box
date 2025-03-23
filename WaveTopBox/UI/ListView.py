@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 #import AstraBox.Models.ModelFactory as ModelFactory
-import WaveBox.work_space as work_space
+import WaveTopBox.work_space as work_space
 
 sym1 = '⏵ '
 sym2 = '⏷ '

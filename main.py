@@ -1,6 +1,6 @@
 import tkinter as tk
-import WaveBox.App as App
-import WaveBox.history as history
+import WaveTopBox.App as App
+import WaveTopBox.history as history
 
 if __name__ == '__main__':
     
