@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from WaveTopBox.Pages.EmptyPage import EmptyPage
-from WaveTopBox.Pages.ReadMePage import ReadMePage
+from WaveTopBox.pages.EmptyPage import EmptyPage
+from WaveTopBox.pages.ReadMePage import ReadMePage
 
 class ContentFrame(ttk.Frame):
     def __init__(self, master) -> None:
