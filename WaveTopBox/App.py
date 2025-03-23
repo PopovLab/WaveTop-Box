@@ -8,7 +8,7 @@ from functools import partial
 #from AstraBox.Pages.FRTCPage import FRTCPage
 #from AstraBox.Pages.SpectrumPage import SpectrumPage
 #from AstraBox.Views.FRTCView import FRTCView
-import WaveTopBox.pages.RackFrame as RackFrame
+import WaveTopBox.pages.rack_frame as rf
 from WaveTopBox.pages.content_frame import ContentFrame
 
 from WaveTopBox.pages.empty_page import EmptyPage
@@ -121,7 +121,7 @@ class MainWindow(tk.Tk):
         left_panel = tk.PanedWindow(main_panel, orient=tk.VERTICAL)  
         main_panel.add(left_panel)  
 
-        rack_frame = RackFrame.construct(left_panel, self)
+        rack_frame = rf.construct(left_panel, self)
         left_panel.add(rack_frame)
 
         self.content_frame = ContentFrame(main_panel)
