@@ -109,7 +109,7 @@ class App(tk.Tk):
             self.base_folder = work_space_loc
             self.title(f"ASTRA Box in {work_space_loc}")            
             self.work_space= work_space.open(work_space_loc)
-            History.add_new(work_space_loc)
+            history.add_new(work_space_loc)
         else:
             self.work_space= work_space.WorkSpace()
             
@@ -239,7 +239,7 @@ class App(tk.Tk):
 
     def create_open_recent_menu(self):
         menu = tk.Menu(tearoff=0)
-        hi = History.get_list()
+        hi = history.get_list()
         for item in reversed(hi):
             menu.add_command(label=item, command= partial(self.open_command, item))
         return menu
