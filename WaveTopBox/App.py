@@ -20,7 +20,7 @@ from WaveTopBox.pages.EmptyPage import EmptyPage
 #from AstraBox.Pages.RunAstraPage import RunAstraPage
 #from AstraBox.Models.RaceModel import RaceModel
 
-#import AstraBox.Models.ModelFactory as ModelFactory
+import WaveTopBox.models.model_factory as model_factory
 #import AstraBox.Config as Config
 import WaveTopBox.work_space as work_space
 import WaveTopBox.history as history
@@ -198,10 +198,10 @@ class MainWindow(tk.Tk):
         self.content_frame.set_content(page)
     
 
-    def create_FRTC_configuration(self):
-        model = ModelFactory.create_model('FRTCModel')
+    def create_impedance(self):
+        model = model_factory.create_model('ImpedModel')
         work_space.save_model(model)
-        work_space.refresh_folder('FRTCModel') 
+        work_space.refresh_folder('ImpedModel') 
         #page = FRTCPage(self.content_frame, None, model) 
         #self.content_frame.set_content(page)
 
@@ -246,7 +246,7 @@ class MainWindow(tk.Tk):
 
     def create_main_menu(self):
         new_menu = tk.Menu(tearoff=0)
-        new_menu.add_command(label='FRTC Configurations', command=self.create_FRTC_configuration)
+        new_menu.add_command(label='Impedance', command=self.create_impedance)
         new_menu.add_command(label='Experiments', state='disabled')
         new_menu.add_command(label='Equlibrium', state='disabled')
         new_menu.add_command(label='gauss spectrum', command=self.create_gauss_spectrum)

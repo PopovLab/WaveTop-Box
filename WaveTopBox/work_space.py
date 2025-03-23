@@ -147,7 +147,7 @@ class Folder(BaseModel):
 
 
 default_catalog = [
-    Folder(title= 'Impedances', content_type='ImpModel', location= 'imp'),
+    Folder(title= 'Impedances', content_type='ImpedModel', location= 'imp'),
     Folder(title= 'Imped races', content_type='ImpRaceModel', location= 'imp_race'),
     Folder(title= 'GRILL', content_type='GrillModel', location= 'grill'),
     Folder(title= 'Ray Tracing Configurations', content_type='RTModel', location= 'ray_tracing', required= False),
@@ -254,9 +254,9 @@ from typing import Type
 def save_model(model):
     print(type(model))
     match type(model).__name__:
-        case 'FRTCModel':
-            print("save FRTCModel")
-            p = get_path('FRTCModel').joinpath(f'{model.name}.frtc')
+        case 'ImpedModel':
+            print("save ImpedModel")
+            p = get_path('ImpedModel').joinpath(f'{model.name}.imp')
             print(p)
             with p.open("w" , encoding='utf-8') as file:
                 file.write(model.get_dump())
