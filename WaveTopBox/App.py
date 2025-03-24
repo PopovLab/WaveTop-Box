@@ -108,7 +108,7 @@ class MainWindow(tk.Tk):
 
         if work_space_loc:
             self.base_folder = work_space_loc
-            self.title(f"ASTRA Box in {work_space_loc}")            
+            self.title(f"WaveTop Box in {work_space_loc}")            
             self.work_space= work_space.open(work_space_loc)
             history.add_new(work_space_loc)
         else:
@@ -188,7 +188,6 @@ class MainWindow(tk.Tk):
                 model = ModelFactory.load(folder_item)
                 page = RayTracingPage(self.content_frame, folder_item, model)                  
             case 'ImpedModel':
-                #model = ModelFactory.load(folder_item)
                 page = ImpedPage(self.content_frame, folder_item)                    
             case 'SpectrumModel':
                 #model = ModelFactory.load(folder_item)
