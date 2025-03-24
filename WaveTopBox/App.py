@@ -12,6 +12,7 @@ import WaveTopBox.pages.rack_frame as rf
 from WaveTopBox.pages.content_frame import ContentFrame
 
 from WaveTopBox.pages.empty_page import EmptyPage
+from WaveTopBox.pages.imped_page import ImpedPage
 #from AstraBox.Pages.RayTracingPage import RayTracingPage
 #from AstraBox.Views.TextView import TextView
 #from AstraBox.Pages.ExpPage import ExpPage
@@ -186,9 +187,9 @@ class MainWindow(tk.Tk):
             case 'RTModel':
                 model = ModelFactory.load(folder_item)
                 page = RayTracingPage(self.content_frame, folder_item, model)                  
-            case 'FRTCModel':
+            case 'ImpedModel':
                 #model = ModelFactory.load(folder_item)
-                page = FRTCPage(self.content_frame, folder_item)                    
+                page = ImpedPage(self.content_frame, folder_item)                    
             case 'SpectrumModel':
                 #model = ModelFactory.load(folder_item)
                 page = SpectrumPage(self.content_frame, folder_item)                    
