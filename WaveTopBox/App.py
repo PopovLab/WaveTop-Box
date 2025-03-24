@@ -5,9 +5,7 @@ from tkinter import filedialog
 import tkinter.ttk as ttk
 import tkinter.messagebox as messagebox
 from functools import partial
-#from AstraBox.Pages.FRTCPage import FRTCPage
-#from AstraBox.Pages.SpectrumPage import SpectrumPage
-#from AstraBox.Views.FRTCView import FRTCView
+
 import WaveTopBox.pages.rack_frame as rf
 from WaveTopBox.pages.content_frame import ContentFrame
 
@@ -36,7 +34,7 @@ def run():
     win.mainloop()
 
 def clone_model(model):
-    model = ModelFactory.clone_model(model)
+    model = model_factory.clone_model(model)
     work_space.save_model(model)
     print(type(model).__name__)
     work_space.refresh_folder(type(model).__name__) 
