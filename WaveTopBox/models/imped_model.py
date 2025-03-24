@@ -4,9 +4,6 @@ from typing_extensions import Annotated
 from typing import ClassVar
 from pydantic import BaseModel, Field
 
-#import AstraBox.WorkSpace as WorkSpace
-
-
 class Text(BaseModel):
     title: str
     text: list[str]
@@ -93,16 +90,19 @@ class Options(ParametersSection):
     max_number_of_traj : int = Field(default= 30000, title= 'max number of traj', description= "maximum number of trajectories")
     max_size_of_traj : int = Field(default= 3000, title= 'max length of traj', description= "maximum length of trajectories")
 
-class GrillParameters(ParametersSection):
-    name: ClassVar[str] = 'grill_parameters'
-    title: ClassVar[str] = 'Grill parameters'
-    Zplus: float = Field(default= 11, title='Zplus', description='upper grill corner in centimeters', unit='cm')
-    Zminus: float = Field(default= -11, title='Zminus', description='lower grill corner in centimeters', unit='cm')
-
-    ntet: int = Field(default= 21, title='ntet', description='theta grid number')
-    nnz:  int = Field(default= 51, title='nnz', description='iN_phi grid numbe')
-
-
+class PlasmaParameters(ParametersSection):
+    name: ClassVar[str] = 'plasma_parameters'
+    title: ClassVar[str] = 'Plasma'
+    R0: float = Field(default= 148.0, title='major radius', description='major radius (R0=0 for cylinder geometry)', unit='cm')
+    a0: float = Field(default= 67.0, title='minor radius', description='minor radius', unit='cm')
+    SOL: float = Field(default= 0.0, title='SOL width', description='SOL width; a0-sol = al', unit='cm')
+    Delx: float = Field(default= 5.0, title='Shafranov shift', description='Shafranov shift at the axis', unit='cm')
+    lamw: float = Field(default= 1.8, title='ellipt-ty', description='ellipt-ty of the last flux surface (lamw>=1)')
+    gamw: float = Field(default= 0.3, title='triang-ty', description='triang-ty of the last flux surface (0<=gamw<=1)')
+    freq: float = Field(default= 2.45, title='frequency', description='frequency', unit='GHz')
+    ion_species: list[int] = Field(default= '[2, 1]', title='Ion species', description='integer ion mass, ion charge')
+               
+    
 class ImpedModel(BaseModel):
     name:  str = Field(default= '123', title='name')
     comment: str = Field(default='ccc', title='Comment')
@@ -115,15 +115,15 @@ class ImpedModel(BaseModel):
 
     options: Options = Field(default= Options())
 
-    grill_parameters: GrillParameters = Field(default= GrillParameters())
+    plasma_parameters: PlasmaParameters = Field(default= PlasmaParameters())
 
     def get_sections(self):
         return [
+            self.plasma_parameters,
             self.physical_parameters,
             self.alphas_parameters,
             self.numerical_parameters,
-            self.options,
-            self.grill_parameters
+            self.options
             ]
 
     @classmethod
@@ -194,7 +194,7 @@ def save_frtc(rtp, fn):
 
 
 if __name__ == '__main__':
-    frtc = FRTCModel()
+    frtc = ImpedModel()
     print(frtc.prepare_dat_file())
     exit()
     save_frtc(frtc, 'test_frtc_model.txt')
