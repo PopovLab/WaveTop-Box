@@ -3,6 +3,7 @@ import tkinter.ttk as ttk
 import tkinter.messagebox as messagebox
 
 from WaveTopBox.ui.header_panel import HeaderPanel
+from WaveTopBox.views.errror_view import ErrorView
 from WaveTopBox.views.imped_view import ImpedView
 import WaveTopBox.models.model_factory as ModelFactory
 import WaveTopBox.App as App
@@ -20,9 +21,15 @@ class ImpedPage(ttk.Frame):
         self.columnconfigure(0, weight=0)        
         self.columnconfigure(1, weight=1)         
 
-        self.view = ImpedView(self, self.model)
+        print(type(self.model).__name__)
+        print('--------')
+        if type(self.model).__name__ == 'ErrorModel':
+            self.view = ErrorView(self, self.model)
+        else:
+            self.view = ImpedView(self, self.model)
         self.view.grid(row=1, column=0,columnspan=3, padx=5, sticky=tk.N + tk.S + tk.E + tk.W)
-        
+        self.rowconfigure(0, weight=0)
+        self.rowconfigure(1, weight=1)
 
     def clone_model(self):
         self.view.update_model()
